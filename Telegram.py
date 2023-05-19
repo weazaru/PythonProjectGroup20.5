@@ -7,14 +7,14 @@ bot = telebot.TeleBot('6244920773:AAGjUPIAyjFtF8OWdrV0izgRE9_J4RlMfCk')
 def start(message):
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1 = types.KeyboardButton("👋 Поздороваться")
+    btn1 = types.KeyboardButton("👋 Привет")
     markup.add(btn1)
     bot.send_message(message.from_user.id, "👋 Привет! Я твой бот-помошник!", reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
 
-    if message.text == '👋 Поздороваться':
+    if message.text == '👋 Привет':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True) #создание новых кнопок
         btn1 = types.KeyboardButton('Как стать автором на Хабре?')
         btn2 = types.KeyboardButton('Правила сайта')
